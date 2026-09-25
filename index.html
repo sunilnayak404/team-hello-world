@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World — Glassmorphism Experience</title>
+    <meta name="description" content="A stunning, modern interactive Hello World application crafted with pure Glassmorphism aesthetic.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-aurora">
+    <!-- Ambient Animated Background Elements -->
+    <div class="background-wrapper">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="glow-orb orb-4"></div>
+        <div class="mesh-grid"></div>
+        <div id="cursor-glow" class="cursor-glow"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="app-viewport">
+        <!-- Main Glassmorphic Card -->
+        <article class="glass-card" id="main-glass-card">
+            <!-- Glass Light Reflection Layer -->
+            <div class="glass-reflection"></div>
+            <div class="glass-border-glow"></div>
+
+            <!-- Top Header Bar inside Glass -->
+            <header class="glass-header">
+                <div class="brand-badge">
+                    <span class="pulse-dot"></span>
+                    <i class="fa-solid fa-cube"></i>
+                    <span>Glassmorphism UI</span>
+                </div>
+                <div class="system-status">
+                    <span id="live-clock"><i class="fa-regular fa-clock"></i> 00:00:00</span>
+                    <button id="sound-toggle-btn" class="glass-icon-btn" title="Toggle UI Sound" aria-label="Toggle UI Sound">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Card Body / Hero Section -->
+            <section class="glass-body">
+                <div class="hero-badge-container">
+                    <span class="hero-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Pair Programming Creation</span>
+                </div>
+
+                <!-- Main Greeting Text -->
+                <div class="greeting-wrapper">
+                    <h1 class="greeting-title" id="greeting-text">
+                        <span class="gradient-text">Hello, World!</span>
+                    </h1>
+                    <p class="greeting-subtitle" id="greeting-sub">
+                        Welcome to a modern, frosted-glass interactive web experience.
+                    </p>
+                </div>
+
+                <!-- Language Switcher Chips -->
+                <div class="lang-selector-group" role="tablist" aria-label="Language Selector">
+                    <button class="lang-chip active" data-lang="en" data-greeting="Hello, World!" data-sub="Welcome to a modern, frosted-glass interactive web experience.">
+                        <span class="flag">🇺🇸</span> English
+                    </button>
+                    <button class="lang-chip" data-lang="es" data-greeting="¡Hola, Mundo!" data-sub="Bienvenido a una experiencia web interactiva de cristal esmerilado.">
+                        <span class="flag">🇪🇸</span> Español
+                    </button>
+                    <button class="lang-chip" data-lang="ja" data-greeting="こんにちは、世界！" data-sub="すりガラスのモダンなインタラクティブWeb体験へようこそ。">
+                        <span class="flag">🇯🇵</span> 日本語
+                    </button>
+                    <button class="lang-chip" data-lang="fr" data-greeting="Bonjour le Monde!" data-sub="Bienvenue dans une expérience web interactive en verre givré.">
+                        <span class="flag">🇫🇷</span> Français
+                    </button>
+                    <button class="lang-chip" data-lang="hi" data-greeting="नमस्ते दुनिया!" data-sub="आधुनिक फ्रॉस्टेड-ग्लास इंटरएक्टिव वेब अनुभव में आपका स्वागत है।">
+                        <span class="flag">🇮🇳</span> हिंदी
+                    </button>
+                    <button class="lang-chip" data-lang="code" data-greeting="console.log('Hello World!');" data-sub="// Execution successful. Rendered with ultra-smooth glass style.">
+                        <span class="flag">💻</span> Code
+                    </button>
+                </div>
+
+                <!-- Interactive Controls Section -->
+                <div class="glass-control-panel">
+                    <!-- Action Button with Counter -->
+                    <div class="action-card glass-panel">
+                        <div class="action-info">
+                            <span class="action-label">Interactive Ripple</span>
+                            <span class="action-count" id="click-counter">0 Hellos Sent</span>
+                        </div>
+                        <button id="hello-btn" class="glass-btn primary-btn">
+                            <i class="fa-solid fa-hand-wave"></i> Say Hello!
+                        </button>
+                    </div>
+
+                    <!-- Customizer Dock -->
+                    <div class="customizer-card glass-panel">
+                        <div class="customizer-header">
+                            <span><i class="fa-solid fa-sliders"></i> Glass Controls</span>
+                        </div>
+                        <div class="control-row">
+                            <label for="blur-slider">Blur: <span id="blur-val">20px</span></label>
+                            <input type="range" id="blur-slider" min="4" max="40" value="20" class="glass-slider">
+                        </div>
+                        <div class="control-row">
+                            <label for="opacity-slider">Glass Opacity: <span id="opacity-val">25%</span></label>
+                            <input type="range" id="opacity-slider" min="5" max="60" value="25" class="glass-slider">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theme Palette Selector -->
+                <div class="theme-selector-bar">
+                    <span class="theme-label">Atmosphere:</span>
+                    <div class="theme-options">
+                        <button class="theme-dot active" data-theme="theme-aurora" title="Aurora Teal" style="background: linear-gradient(135deg, #00f2fe, #4facfe);"></button>
+                        <button class="theme-dot" data-theme="theme-violet" title="Neon Violet" style="background: linear-gradient(135deg, #7f00ff, #e100ff);"></button>
+                        <button class="theme-dot" data-theme="theme-sunset" title="Sunset Flare" style="background: linear-gradient(135deg, #ff4e50, #f9d423);"></button>
+                        <button class="theme-dot" data-theme="theme-cyberpunk" title="Cyberpunk Night" style="background: linear-gradient(135deg, #00ff87, #60efff);"></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card Footer -->
+            <footer class="glass-footer">
+                <div class="footer-stats">
+                    <span class="stat-pill"><i class="fa-solid fa-layer-group"></i> Backdrop Filter: Active</span>
+                    <span class="stat-pill"><i class="fa-solid fa-bolt"></i> 60FPS CSS FX</span>
+                </div>
+                <div class="footer-copyright">
+                    Pure CSS & JS Glassmorphism
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Canvas overlay for particle effects -->
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <script src="index.js"></script>
+</body>
+</html>
