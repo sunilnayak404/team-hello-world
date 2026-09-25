@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             helloBtn.style.transform = '';
         }, 150);
+
+        // Trigger alert to display number of hellos sent
+        setTimeout(() => {
+            alert(`Hellos sent: ${clickCount}`);
+        }, 50);
     });
 
     /* ==========================================================================
